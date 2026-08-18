@@ -6,6 +6,6 @@ def dot_product(x, y):
     Must return a float.
     """
     # Write code here
-    if len(x) != len(y):
-        raise ValueError()
-    return np.dot(x, y)
+    x = np.asarray(x, dtype=float)
+    y = np.asarray(y, dtype=float)
+    return float(np.dot(x, y))
