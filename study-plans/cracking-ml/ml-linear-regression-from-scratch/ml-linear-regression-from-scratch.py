@@ -6,14 +6,17 @@ def linear_regression(X, y, lr, epochs):
     """
     X = np.array(X, dtype=np.float64)
     y = np.array(y, dtype=np.float64)
-    n, d = X.shape[0], X.shape[1]
-    w, b = np.zeros(d), 0
+    n, d = X.shape
+    w, b = np.zeros(d), 0.0
 
-    for epoch in range(epochs):
+    for _ in range(epochs):
         y_hat = X @ w + b
-        grad_w = 2/n * X.T @ (y_hat - y)
-        grad_b = 2/n * np.sum(y_hat - y)
-        w = w - lr * grad_w
-        b = b - lr * grad_b
+        err = y_hat - y
+        dw = (2.0 / n) * (X.T @ err)
+        db = (2.0 / n) * np.sum(err)
+        w -= lr * dw
+        b -= lr * db
 
-    return w, b
+    weights = [round(float(v), 4) for v in w]
+    bias = round(float(b), 4)
+    return (weights, bias)
