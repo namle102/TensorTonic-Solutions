@@ -1,0 +1,1 @@
+The ||⋅||^2 notation is just a compact way of saying "square every entry, then add them all up," without needing an explicit summation sign or index.
