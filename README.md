@@ -43,6 +43,7 @@ Verified machine learning implementations completed on [TensorTonic](https://www
 | Reshaping Arrays | Transform a rectangular input into a NumPy float64 array using flattening, transposition, or a leading batch dimension. | https://www.tensortonic.com/problems/numpy-reshape |
 | Zeros and Ones | Create a two-dimensional float64 NumPy array of a requested shape filled entirely with zeros or ones. | https://www.tensortonic.com/problems/numpy-zeros-ones |
 | Mean, Median, Mode | Compute mean, median, and a deterministically selected mode for a one-dimensional numeric sample. | https://www.tensortonic.com/problems/probstat-mean-median-mode |
+| Sample Variance & Standard Deviation | Compute unbiased sample variance and standard deviation with Bessel correction for a numeric sample. | https://www.tensortonic.com/problems/probstat-sample-var-std |
 | Sample Variance & Standard Deviation | Compute sample variance and standard deviation with Bessel's correction from a numeric collection. | https://www.tensortonic.com/problems/sample-var-std |
 
 View my verified ML profile: [TensorTonic profile](https://www.tensortonic.com/profile/namle102)
