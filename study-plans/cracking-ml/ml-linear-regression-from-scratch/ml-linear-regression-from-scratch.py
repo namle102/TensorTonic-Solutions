@@ -10,18 +10,13 @@ def linear_regression_from_scratch(X: list, y: list, lr: float, epochs: int) -> 
     w = np.zeros(n)
     b = 0.0
 
-    # compute grad descent
-    for i in range(epochs):
-        # compute err
+    for _ in range(epochs):
         pred = X @ w + b
         err = pred - y
-
-        # compute grad
-        dw = (X.T @ err) * (2/m)
-        db = np.mean(err) * 2
-
-        # compute grad desc
+        dw = 2/m * (X.T @ err)
+        db = 2/m * np.sum(err)
         w -= lr * dw
         b -= lr * db
 
-    return (w, b)
+    return w, b
+        
