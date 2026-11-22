@@ -4,18 +4,18 @@ def logistic_regression(X: list, y: list, lr: float, n_iters: int) -> tuple:
     """
     Returns the fitted weight list and bias.
     """
-    X = np.array(X, dtype=np.float64)
-    y = np.array(y, dtype=np.float64)
+    X = np.asarray(X, dtype=np.float64)
+    y = np.asarray(y, dtype=np.float64)
     m, d = X.shape
-    w = np.zeros(d)
+    w = np.zeros(d, dtype=np.float64)
     b = 0.0
 
     for _ in range(n_iters):
-        z = X @ w + b
-        y_hat = 1 / (1 + np.exp(-z))
-        err = y_hat - y
-        dw = (1 / m) * (X.T @ err)
-        db = (1 / m) * np.sum(err)
+        logits = X @ w + b
+        probs = 1 / (1 + np.exp(-logits))
+        errs = probs - y
+        dw = (1 / m) * (X.T @ errs)
+        db = np.mean(errs)
         w -= lr * dw
         b -= lr * db
 
